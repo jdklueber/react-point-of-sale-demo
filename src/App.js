@@ -8,8 +8,8 @@ function App() {
   const addItem = (itemName, price) => {
     const newItem = {
       itemName: itemName,
-      price: price
-    }
+      price: parseFloat(price)
+    };
 
     const newItemList = [...itemList, newItem];
     setItemList(newItemList);
@@ -23,7 +23,7 @@ function App() {
           { itemList.map(item => {return <p>{item.itemName}, {item.price}</p> }) }
         </div>
 
-        <OutputArea/>
+        <OutputArea itemList={itemList}/>
     </div>
   );
 }
